@@ -75,17 +75,36 @@ h2 {
 }
 .testimonial-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
   padding: 30px;
-  width: min(95%, 70rem);
+  width: min(95%, 80rem);
   margin-inline: auto;
+}
+
+@media (min-width: 1080px) {
+  .testimonial.quote {
+    background-image: url("./images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: top right 10%;
+  }
+  .testimonial-section {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: min-content min-content;
+  }
+  .wide {
+    grid-column: span 2;
+  }
+  .t5 {
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+  }
 }
 .testimonial {
   font-size: var(--fs-small);
   border-radius: var(--br);
   padding: 2rem;
-  box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-Grey-400) / 0.25);
+  box-shadow: 3rem 3rem 3rem -3rem;
 }
 
 .testimonial > p:first-of-type {
